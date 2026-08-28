@@ -1,0 +1,90 @@
+.map-container {
+  position: absolute;
+  inset: 0;
+}
+
+.map-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 32px;
+  background: linear-gradient(180deg, var(--mint) 0%, var(--warm-white) 100%);
+}
+
+.map-fallback-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-brand);
+}
+
+.map-fallback-body {
+  max-width: 320px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.map-fallback-body code {
+  background: var(--white);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.82em;
+}
+
+.map-pin {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--pin-color, var(--map-poi-official));
+  box-shadow: 0 2px 6px rgba(11, 31, 51, 0.35);
+  border: 2px solid var(--white);
+}
+
+.map-pin:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.map-pin-building {
+  width: 30px;
+  height: 30px;
+}
+
+.map-pin-selected {
+  background: var(--map-building-selected) !important;
+  transform: rotate(-45deg) scale(1.15);
+}
+
+.map-pin-poi {
+  width: 18px;
+  height: 18px;
+  background: var(--map-poi-official);
+}
+
+.map-pin-community {
+  background: var(--map-pin-community);
+}
+
+.map-pin-user {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--map-current-location);
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.25);
+}
+
+.mapboxgl-ctrl-attrib {
+  font-size: 10px;
+}

@@ -1,0 +1,52 @@
+.pin-drop-hint {
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.pin-drop-coords {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--color-community);
+  background: rgba(249, 115, 22, 0.1);
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 11px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid var(--color-action);
+  outline-offset: 1px;
+}
+
+.pin-drop-error {
+  color: var(--color-error);
+  font-size: 0.84rem;
+  margin-bottom: 10px;
+}

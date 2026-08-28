@@ -1,0 +1,172 @@
+.admin-page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.status-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--color-surface);
+  padding: 4px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+.status-tabs button {
+  border: none;
+  background: transparent;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.status-tabs button.active {
+  background: var(--color-brand);
+  color: var(--white);
+}
+
+.admin-empty {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.pin-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pin-card {
+  display: flex;
+  gap: 14px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pin-card-map {
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-sm);
+  background: var(--mint);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pin-card-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-community);
+  box-shadow: 0 0 0 5px rgba(249, 115, 22, 0.2);
+}
+
+.pin-card-coords {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--color-brand-secondary);
+  text-align: center;
+  padding: 0 4px;
+}
+
+.pin-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.pin-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.pin-card-category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-community);
+  background: rgba(249, 115, 22, 0.12);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.pin-card-meta {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.pin-card-note {
+  font-size: 0.86rem;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.pin-card-reason {
+  color: var(--color-error);
+}
+
+.pin-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pin-card-actions select,
+.pin-card-actions input {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 7px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.pin-card-actions input {
+  flex: 1;
+  min-width: 140px;
+}
+
+.btn-approve,
+.btn-reject {
+  border: none;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-approve {
+  background: var(--color-action);
+  color: var(--white);
+}
+
+.btn-reject {
+  background: rgba(229, 72, 77, 0.12);
+  color: var(--color-error);
+}
+
+.btn-approve:disabled,
+.btn-reject:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

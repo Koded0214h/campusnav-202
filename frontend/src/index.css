@@ -1,0 +1,123 @@
+/* CampusNav color system.
+   Hierarchy: Navy = identity · Emerald = action · White/Warm White = space ·
+   Slate = information · Blue = user · Purple = accessibility ·
+   Orange = community · Red = error · Amber = warning. */
+:root {
+  --navy-deep: #0b1f33;
+  --navy: #163a5c;
+  --emerald: #18a673;
+  --mint: #ddf7ed;
+  --warm-white: #f7f8f6;
+  --white: #ffffff;
+  --ink: #10202f;
+  --slate: #64748b;
+  --blue: #3b82f6;
+  --amber: #f59e0b;
+  --red: #e5484d;
+  --purple: #7c3aed;
+  --orange: #f97316;
+
+  /* semantic aliases used throughout the app */
+  --color-bg: var(--warm-white);
+  --color-surface: var(--white);
+  --color-text: var(--ink);
+  --color-text-muted: var(--slate);
+  --color-border: #e2e5e9;
+  --color-brand: var(--navy-deep);
+  --color-brand-secondary: var(--navy);
+  --color-action: var(--emerald);
+  --color-action-bg: var(--mint);
+  --color-user: var(--blue);
+  --color-accessible: var(--purple);
+  --color-community: var(--orange);
+  --color-error: var(--red);
+  --color-warning: var(--amber);
+  --shadow-sm: 0 1px 2px rgba(11, 31, 51, 0.08), 0 1px 1px rgba(11, 31, 51, 0.04);
+  --shadow-lg: 0 12px 32px rgba(11, 31, 51, 0.18), 0 4px 10px rgba(11, 31, 51, 0.08);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  /* map-specific palette, kept separate from general UI colors */
+  --map-building: #e5e7eb;
+  --map-building-selected: var(--emerald);
+  --map-path: #cbd5e1;
+  --map-road-primary: #94a3b8;
+  --map-route: var(--emerald);
+  --map-current-location: var(--blue);
+  --map-poi-official: var(--navy);
+  --map-pin-community: var(--orange);
+  --map-route-accessible: var(--purple);
+
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/145% var(--sans);
+  color-scheme: light dark;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #08131f;
+    --color-surface: #102235;
+    --color-text: #f8fafc;
+    --color-text-muted: #94a3b8;
+    --color-border: #1c3350;
+    --color-brand: #163a5c;
+    --color-action: #35d39a;
+    --color-action-bg: rgba(53, 211, 154, 0.14);
+    --map-building: #1c3350;
+    --map-road-primary: #2e4a6b;
+    --map-path: #294462;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+/* mobile-first: base font/spacing tuned for small screens, scaled up from
+   a single breakpoint upward rather than the other way around */
+@media (min-width: 720px) {
+  :root {
+    font-size: 17px;
+  }
+}

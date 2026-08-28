@@ -1,0 +1,76 @@
+Yep. I’d turn it into a small **CampusNav color system** so you guys can use the same colors consistently across the React app, Mapbox UI, buttons, cards, admin dashboard, etc.
+
+### 🎨 CampusNav Color Palette
+
+| Color             | Hex       | Use                                                                                                                     |
+| ----------------- | --------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Deep Navy**     | `#0B1F33` | Primary brand color. Headers, primary navigation elements, important text, dark UI surfaces, logo.                      |
+| **Navy Blue**     | `#163A5C` | Secondary brand color. Hover states, secondary buttons, selected navigation elements, map controls.                     |
+| **Emerald Green** | `#18A673` | **Main action/accent color.** Route lines, primary CTA buttons, selected buildings, active states, confirmation states. |
+| **Mint**          | `#DDF7ED` | Light emerald background. Accessibility indicators, selected/active cards, success backgrounds, subtle highlights.      |
+| **Warm White**    | `#F7F8F6` | Main application background. Keeps the interface softer than pure white.                                                |
+| **White**         | `#FFFFFF` | Cards, bottom sheets, search bars, modals, floating controls and other elevated surfaces.                               |
+| **Almost Black**  | `#10202F` | Primary text. Headings, building names, important information.                                                          |
+| **Slate**         | `#64748B` | Secondary/muted text. Descriptions, metadata, distances, timestamps, hints.                                             |
+| **Blue**          | `#3B82F6` | **User location/GPS.** Current-location dot, location accuracy indicator and GPS-related actions.                       |
+| **Amber**         | `#F59E0B` | Warnings and attention states. GPS unavailable, incomplete information, route warnings, etc.                            |
+| **Red**           | `#E5484D` | Errors, destructive actions, rejected community pins, failed requests and validation errors.                            |
+| **Purple**        | `#7C3AED` | Accessibility-related features and indicators. Could also be used for special map layers.                               |
+| **Orange**        | `#F97316` | Community/crowdsourced pins. This makes user-submitted locations visually distinct from official campus data.           |
+
+### 🗺️ Map-specific colors
+
+I'd keep these separate from the general UI palette:
+
+| Map Element             | Color     | Purpose                              |
+| ----------------------- | --------- | ------------------------------------ |
+| **Buildings**           | `#E5E7EB` | Default building footprint           |
+| **Selected Building**   | `#18A673` | Building currently being viewed      |
+| **Roads/Paths**         | `#CBD5E1` | Normal walking paths                 |
+| **Primary Roads**       | `#94A3B8` | Larger campus roads                  |
+| **Route**               | `#18A673` | The calculated walking route         |
+| **Current Location**    | `#3B82F6` | User's GPS position                  |
+| **Official POI**        | `#163A5C` | Verified campus locations            |
+| **Community Pin**       | `#F97316` | Crowdsourced locations               |
+| **Accessibility Route** | `#7C3AED` | Accessible/wheelchair-friendly route |
+
+### 🌙 Dark Mode
+
+For dark mode, I wouldn't simply invert the colors.
+
+| Color                     | Hex       | Use                                     |
+| ------------------------- | --------- | --------------------------------------- |
+| **Dark Background**       | `#08131F` | Main application/map background         |
+| **Dark Surface**          | `#102235` | Cards, bottom sheets, search bar        |
+| **Dark Elevated Surface** | `#163A5C` | Floating controls and elevated elements |
+| **Emerald**               | `#18A673` | Primary actions and routes              |
+| **Bright Emerald**        | `#35D39A` | Route/highlight in dark environments    |
+| **White Text**            | `#F8FAFC` | Primary text                            |
+| **Muted Text**            | `#94A3B8` | Secondary text                          |
+
+---
+
+### The hierarchy I'd enforce
+
+**Navy = identity**
+**Emerald = action**
+**White/Warm White = space**
+**Slate = information**
+**Blue = user**
+**Purple = accessibility**
+**Orange = community**
+**Red = error**
+**Amber = warning**
+
+That last part is particularly useful because once you guys start implementing, nobody has to debate *“what color should this button/status/pin be?”*
+
+For example:
+
+> **“Is this an official POI?”** → Navy
+> **“Is this my location?”** → Blue
+> **“Is this my route?”** → Emerald
+> **“Is this an accessibility route?”** → Purple
+> **“Did a student submit this?”** → Orange
+> **“Is something wrong?”** → Red
+
+That gives CampusNav a pretty recognizable visual language instead of just having a collection of nice colors.

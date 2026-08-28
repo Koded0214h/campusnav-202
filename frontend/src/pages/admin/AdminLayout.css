@@ -1,0 +1,73 @@
+.admin-shell {
+  min-height: 100svh;
+  background: var(--color-bg);
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  background: var(--color-brand);
+  color: var(--white);
+}
+
+.admin-brand {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  margin-right: auto;
+}
+
+.admin-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.admin-nav a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 0.86rem;
+  padding: 7px 12px;
+  border-radius: 999px;
+}
+
+.admin-nav a.active,
+.admin-nav a:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--white);
+}
+
+.admin-account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.admin-account button {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.admin-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 18px 60px;
+}
+
+@media (max-width: 640px) {
+  .admin-topbar {
+    padding: 12px 14px;
+  }
+  .admin-brand {
+    width: 100%;
+  }
+}
