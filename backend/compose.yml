@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgis/postgis:17-3.5
+    environment:
+      POSTGRES_DB: campusnav
+      POSTGRES_USER: campusnav
+      POSTGRES_PASSWORD: campusnav
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U campusnav -d campusnav"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - campusnav-postgres:/var/lib/postgresql/data
+
+volumes:
+  campusnav-postgres:
