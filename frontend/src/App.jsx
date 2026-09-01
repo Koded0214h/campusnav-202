@@ -1,13 +1,18 @@
+import { useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { MapPage } from './pages/MapPage'
 import { AdminLoginPage } from './pages/admin/AdminLoginPage'
 import { AdminLayout } from './pages/admin/AdminLayout'
 import { AdminPinsPage } from './pages/admin/AdminPinsPage'
 import { AdminBuildingsPage } from './pages/admin/AdminBuildingsPage'
+import { SplashScreen } from './components/splash/SplashScreen'
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true)
+
   return (
     <BrowserRouter>
+      {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
       <Routes>
         <Route path="/" element={<MapPage />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
