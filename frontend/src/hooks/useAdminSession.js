@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { getAdminSession, adminLogout as mockLogout } from '../mock/mockApi'
+import { getAdminSession, adminLogout as apiLogout } from '../api/campusnav'
 
 export function useAdminSession() {
   const [session, setSession] = useState(() => getAdminSession())
@@ -7,7 +7,7 @@ export function useAdminSession() {
   const refresh = useCallback(() => setSession(getAdminSession()), [])
 
   const logout = useCallback(() => {
-    mockLogout()
+    apiLogout()
     setSession(null)
   }, [])
 

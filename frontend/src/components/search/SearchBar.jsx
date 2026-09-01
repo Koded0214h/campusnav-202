@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDebouncedValue } from '../../hooks/useDebouncedValue'
-import { searchLocations } from '../../mock/mockApi'
+import { searchLocations } from '../../api/campusnav'
 import './SearchBar.css'
 
 const CATEGORY_LABEL = {
@@ -13,6 +13,7 @@ const CATEGORY_LABEL = {
   lab: 'Lab',
   study: 'Study space',
   cafeteria: 'Cafeteria',
+  landmark: 'Landmark',
   poi: 'POI',
 }
 

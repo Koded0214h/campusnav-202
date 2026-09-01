@@ -7,12 +7,21 @@ import { Toast } from '../components/layout/Toast'
 import { useGeolocation } from '../hooks/useGeolocation'
 import { formatDistance, formatDuration } from '../lib/format'
 import { haversineMeters } from '../lib/geo'
-import { buildings, pois } from '../mock/mockData'
-import { getDeviceId, getLocation, getRoute, listApprovedPins, submitPin } from '../mock/mockApi'
+import {
+  getDeviceId,
+  getLocation,
+  getMapData,
+  getPoiDetail,
+  getRoute,
+  listApprovedPins,
+  submitPin,
+} from '../api/campusnav'
 import './MapPage.css'
 
 export function MapPage() {
   const geo = useGeolocation()
+  const [buildings, setBuildings] = useState([])
+  const [pois, setPois] = useState([])
   const [communityPins, setCommunityPins] = useState([])
   const [selected, setSelected] = useState(null) // { type, id, lat, lng }
   const [sheetOpen, setSheetOpen] = useState(false)
@@ -41,6 +50,10 @@ export function MapPage() {
   }, [])
 
   useEffect(() => {
+    getMapData().then((data) => {
+      setBuildings(data.buildings)
+      setPois(data.pois)
+    })
     listApprovedPins().then(setCommunityPins)
   }, [])
 
@@ -74,6 +87,9 @@ export function MapPage() {
         accessible: accessibleFlag,
       })
       setRoute(result)
+    } catch (err) {
+      console.error('CampusNav: route request failed', err)
+      showToast(`Couldn't get directions: ${err.message}`, 'error')
     } finally {
       setLoadingRoute(false)
     }
@@ -101,16 +117,11 @@ export function MapPage() {
     setSheetOpen(true)
     setRoute(null)
     setAccessible(false)
-    setLocation({
-      id: poi.id,
-      name: poi.name,
-      category: poi.category,
-      description: null,
-      aliases: [],
-      floors: [],
-      pois: [],
+    setLoadingDetail(true)
+    getPoiDetail(poi.id).then((detail) => {
+      setLocation(detail)
+      setLoadingDetail(false)
     })
-    setLoadingDetail(false)
     routeTo(dest, false)
   }
 

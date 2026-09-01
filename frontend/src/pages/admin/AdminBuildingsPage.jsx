@@ -4,7 +4,7 @@ import {
   adminDeleteBuilding,
   adminListBuildings,
   adminUpdateBuilding,
-} from '../../mock/mockApi'
+} from '../../api/campusnav'
 import './AdminBuildingsPage.css'
 
 const EMPTY_FORM = {

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
-import { adminLogin } from '../../mock/mockApi'
+import { adminLogin } from '../../api/campusnav'
 import { useAdminSession } from '../../hooks/useAdminSession'
 import './AdminLoginPage.css'
 

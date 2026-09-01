@@ -1,7 +1,7 @@
 import mapboxgl from 'mapbox-gl'
 import { useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import { CAMPUS_CENTER } from '../../mock/mockData'
+import { CAMPUS_CENTER } from '../../config'
 import './MapView.css'
 
 const TOKEN = import.meta.env.VITE_MAPBOX_TOKEN

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { CAMPUS_CENTER } from '../mock/mockData'
+import { CAMPUS_CENTER } from '../config'
 
 // Wraps the browser Geolocation API with the PRD's manual pin-drop fallback
 // (PRD 5.4): if permission is denied or unavailable, callers get `denied`
